@@ -3,9 +3,10 @@ title: Owtlab Restful API
 language_tabs:
   - ruby: Ruby
   - python: Python
+  - php: Php
 toc_footers: []
 includes: []
-search: true
+search: false
 highlight_theme: darkula
 headingLevel: 2
 
@@ -25,17 +26,14 @@ Email: <a href="mailto:support@owtlab.com">Support</a>
 
 # Authentication
 
-- oAuth2 authentication. 
+* API Key (ApiKeyAuth)
+    - Parameter Name: **api_key**, in: query. 
 
-    - Flow: implicit
-    - Authorization URL = [https://google.com](https://google.com)
+<h1 id="owtlab-restful-api-business">Business</h1>
 
-|Scope|Scope Description|
-|---|---|
+A business profile belongs to a user.
 
-<h1 id="owtlab-restful-api-bank-validation">Bank Validation</h1>
-
-## Validate routing and account number
+## In order to create a business, a valid user id must exist in the database.
 
 > Code samples
 
@@ -48,7 +46,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.post 'https://owtlab.com/v1/bank/validate',
+result = RestClient.post 'https://owtlab.com/v1/api/business',
   params: {
   }, headers: headers
 
@@ -63,7 +61,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.post('https://owtlab.com/v1/bank/validate', params={
+r = requests.post('https://owtlab.com/v1/api/business', params={
 
 }, headers = headers)
 
@@ -71,22 +69,55 @@ print r.json()
 
 ```
 
-`POST /bank/validate`
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','https://owtlab.com/v1/api/business', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`POST /api/business`
 
 > Body parameter
 
 ```json
 {
-  "routing": 0,
-  "account": "string"
+  "name": "string",
+  "user_id": 0
 }
 ```
 
-<h3 id="validate-routing-and-account-number-parameters">Parameters</h3>
+<h3 id="in-order-to-create-a-business,-a-valid-user-id-must-exist-in-the-database.-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[Bank](#schemabank)|true|Bank Object|
+|body|body|[Business](#schemabusiness)|true|none|
 
 > Example responses
 
@@ -94,31 +125,335 @@ print r.json()
 
 ```json
 {
-  "routing": 0,
-  "account": "string"
+  "name": "string",
+  "user_id": 0
 }
 ```
 
-<h3 id="validate-routing-and-account-number-responses">Responses</h3>
+<h3 id="in-order-to-create-a-business,-a-valid-user-id-must-exist-in-the-database.-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful validation response|[Bank](#schemabank)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Delete a business by a businessId.
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.delete 'https://owtlab.com/v1/api/business/{businessId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.delete('https://owtlab.com/v1/api/business/{businessId}', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','https://owtlab.com/v1/api/business/{businessId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`DELETE /api/business/{businessId}`
+
+<h3 id="delete-a-business-by-a-businessid.-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|businessId|path|integer|true|Numeric ID of business to delete|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="delete-a-business-by-a-businessid.-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Fetch a business by a businessId.
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.get 'https://owtlab.com/v1/api/business/{businessId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('https://owtlab.com/v1/api/business/{businessId}', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','https://owtlab.com/v1/api/business/{businessId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`GET /api/business/{businessId}`
+
+<h3 id="fetch-a-business-by-a-businessid.-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|businessId|path|integer|true|Numeric ID of business to update|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="fetch-a-business-by-a-businessid.-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Update business information by business id.
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+}
+
+result = RestClient.put 'https://owtlab.com/v1/api/business/{businessId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+r = requests.put('https://owtlab.com/v1/api/business/{businessId}', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','https://owtlab.com/v1/api/business/{businessId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`PUT /api/business/{businessId}`
+
+> Body parameter
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="update-business-information-by-business-id.-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|businessId|path|integer|true|Numeric ID of business to update|
+|body|body|object|true|none|
+|» name|body|string|false|none|
+|» user_id|body|integer|false|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="update-business-information-by-business-id.-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
 </aside>
 
 # Schemas
 
-<h2 id="tocSbank">Bank</h2>
+<h2 id="tocSbusiness">Business</h2>
 
-<a id="schemabank"></a>
+<a id="schemabusiness"></a>
 
 ```json
 {
-  "routing": 0,
-  "account": "string"
+  "name": "string",
+  "user_id": 0
 }
 
 ```
@@ -127,6 +462,6 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|routing|integer|false|none|none|
-|account|string|false|none|none|
+|name|string|false|none|none|
+|user_id|integer|false|none|none|
 
