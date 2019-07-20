@@ -29,11 +29,620 @@ Email: <a href="mailto:support@owtlab.com">Support</a>
 * API Key (ApiKeyAuth)
     - Parameter Name: **api_key**, in: query. 
 
+<h1 id="owtlab-restful-api-user">User</h1>
+
+A user account in Owtlab.
+
+## Search
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.get 'https://owtlab.com/v1/api/user',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('https://owtlab.com/v1/api/user', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','https://owtlab.com/v1/api/user', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`GET /api/user`
+
+<h3 id="search-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|name|query|string|false|Name of business|
+|user_id|query|integer|false|The user's Id|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="search-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Create
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+}
+
+result = RestClient.post 'https://owtlab.com/v1/api/user',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+r = requests.post('https://owtlab.com/v1/api/user', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','https://owtlab.com/v1/api/user', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`POST /api/user`
+
+> Body parameter
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="create-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[Business](#schemabusiness)|true|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="create-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Delete
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.delete 'https://owtlab.com/v1/api/user/{userId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.delete('https://owtlab.com/v1/api/user/{userId}', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','https://owtlab.com/v1/api/user/{userId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`DELETE /api/user/{userId}`
+
+<h3 id="delete-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|integer|true|Numeric ID of business to delete|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="delete-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Get
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.get 'https://owtlab.com/v1/api/user/{userId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('https://owtlab.com/v1/api/user/{userId}', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','https://owtlab.com/v1/api/user/{userId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`GET /api/user/{userId}`
+
+<h3 id="get-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|integer|true|Numeric ID of business to update|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="get-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Update
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+}
+
+result = RestClient.put 'https://owtlab.com/v1/api/user/{userId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+r = requests.put('https://owtlab.com/v1/api/user/{userId}', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','https://owtlab.com/v1/api/user/{userId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`PUT /api/user/{userId}`
+
+> Body parameter
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="update-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|integer|true|Numeric ID of business to update|
+|body|body|object|true|none|
+|» name|body|string|false|none|
+|» user_id|body|integer|false|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="update-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
 <h1 id="owtlab-restful-api-business">Business</h1>
 
 A business profile belongs to a user.
 
-## In order to create a business, a valid user id must exist in the database.
+## Search
+
+> Code samples
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.get 'https://owtlab.com/v1/api/business',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('https://owtlab.com/v1/api/business', params={
+
+}, headers = headers)
+
+print r.json()
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    
+    );
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','https://owtlab.com/v1/api/business', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+`GET /api/business`
+
+<h3 id="search-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|name|query|string|false|Name of business|
+|user_id|query|integer|false|The user's Id|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "name": "string",
+  "user_id": 0
+}
+```
+
+<h3 id="search-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Business Object Response|[Business](#schemabusiness)|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+ApiKeyAuth
+</aside>
+
+## Create
 
 > Code samples
 
@@ -113,7 +722,7 @@ try {
 }
 ```
 
-<h3 id="in-order-to-create-a-business,-a-valid-user-id-must-exist-in-the-database.-parameters">Parameters</h3>
+<h3 id="create-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -130,7 +739,7 @@ try {
 }
 ```
 
-<h3 id="in-order-to-create-a-business,-a-valid-user-id-must-exist-in-the-database.-responses">Responses</h3>
+<h3 id="create-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -141,7 +750,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 ApiKeyAuth
 </aside>
 
-## Delete a business by a businessId.
+## Delete
 
 > Code samples
 
@@ -209,7 +818,7 @@ try {
 
 `DELETE /api/business/{businessId}`
 
-<h3 id="delete-a-business-by-a-businessid.-parameters">Parameters</h3>
+<h3 id="delete-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -226,7 +835,7 @@ try {
 }
 ```
 
-<h3 id="delete-a-business-by-a-businessid.-responses">Responses</h3>
+<h3 id="delete-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -237,7 +846,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 ApiKeyAuth
 </aside>
 
-## Fetch a business by a businessId.
+## Get
 
 > Code samples
 
@@ -305,7 +914,7 @@ try {
 
 `GET /api/business/{businessId}`
 
-<h3 id="fetch-a-business-by-a-businessid.-parameters">Parameters</h3>
+<h3 id="get-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -322,7 +931,7 @@ try {
 }
 ```
 
-<h3 id="fetch-a-business-by-a-businessid.-responses">Responses</h3>
+<h3 id="get-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -333,7 +942,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 ApiKeyAuth
 </aside>
 
-## Update business information by business id.
+## Update
 
 > Code samples
 
@@ -413,7 +1022,7 @@ try {
 }
 ```
 
-<h3 id="update-business-information-by-business-id.-parameters">Parameters</h3>
+<h3 id="update-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -433,7 +1042,7 @@ try {
 }
 ```
 
-<h3 id="update-business-information-by-business-id.-responses">Responses</h3>
+<h3 id="update-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
