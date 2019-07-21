@@ -1,12 +1,10 @@
 ---
 title: Owtlab Restful API
 language_tabs:
-  - ruby: Ruby
-  - python: Python
   - php: Php
 toc_footers: []
 includes: []
-search: false
+search: true
 highlight_theme: darkula
 headingLevel: 2
 
@@ -31,41 +29,11 @@ Email: <a href="mailto:support@owtlab.com">Support</a>
 
 <h1 id="owtlab-restful-api-user">User</h1>
 
-A user account in Owtlab.
+Manage user accounts on owtlab.
 
 ## Search
 
 > Code samples
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json'
-}
-
-result = RestClient.get 'https://owtlab.com/v1/api/user',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.get('https://owtlab.com/v1/api/user', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
 
 ```php
 <?php
@@ -134,38 +102,6 @@ ApiKeyAuth
 
 > Code samples
 
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json'
-}
-
-result = RestClient.post 'https://owtlab.com/v1/api/user',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-r = requests.post('https://owtlab.com/v1/api/user', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
-
 ```php
 <?php
 
@@ -215,6 +151,8 @@ try {
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[Business](#schemabusiness)|true|none|
+|» name|body|string|false|none|
+|» user_id|body|integer|false|none|
 
 > Example responses
 
@@ -241,36 +179,6 @@ ApiKeyAuth
 ## Delete
 
 > Code samples
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json'
-}
-
-result = RestClient.delete 'https://owtlab.com/v1/api/user/{userId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.delete('https://owtlab.com/v1/api/user/{userId}', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
 
 ```php
 <?php
@@ -338,36 +246,6 @@ ApiKeyAuth
 
 > Code samples
 
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json'
-}
-
-result = RestClient.get 'https://owtlab.com/v1/api/user/{userId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.get('https://owtlab.com/v1/api/user/{userId}', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
-
 ```php
 <?php
 
@@ -433,38 +311,6 @@ ApiKeyAuth
 ## Update
 
 > Code samples
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json'
-}
-
-result = RestClient.put 'https://owtlab.com/v1/api/user/{userId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-r = requests.put('https://owtlab.com/v1/api/user/{userId}', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
 
 ```php
 <?php
@@ -549,36 +395,6 @@ A business profile belongs to a user.
 
 > Code samples
 
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json'
-}
-
-result = RestClient.get 'https://owtlab.com/v1/api/business',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.get('https://owtlab.com/v1/api/business', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
-
 ```php
 <?php
 
@@ -646,38 +462,6 @@ ApiKeyAuth
 
 > Code samples
 
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json'
-}
-
-result = RestClient.post 'https://owtlab.com/v1/api/business',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-r = requests.post('https://owtlab.com/v1/api/business', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
-
 ```php
 <?php
 
@@ -727,6 +511,8 @@ try {
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[Business](#schemabusiness)|true|none|
+|» name|body|string|false|none|
+|» user_id|body|integer|false|none|
 
 > Example responses
 
@@ -753,36 +539,6 @@ ApiKeyAuth
 ## Delete
 
 > Code samples
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json'
-}
-
-result = RestClient.delete 'https://owtlab.com/v1/api/business/{businessId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.delete('https://owtlab.com/v1/api/business/{businessId}', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
 
 ```php
 <?php
@@ -850,36 +606,6 @@ ApiKeyAuth
 
 > Code samples
 
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json'
-}
-
-result = RestClient.get 'https://owtlab.com/v1/api/business/{businessId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.get('https://owtlab.com/v1/api/business/{businessId}', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
-
 ```php
 <?php
 
@@ -945,38 +671,6 @@ ApiKeyAuth
 ## Update
 
 > Code samples
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json'
-}
-
-result = RestClient.put 'https://owtlab.com/v1/api/business/{businessId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-r = requests.put('https://owtlab.com/v1/api/business/{businessId}', params={
-
-}, headers = headers)
-
-print r.json()
-
-```
 
 ```php
 <?php
