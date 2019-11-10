@@ -407,7 +407,7 @@
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/apps/{app_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/apps/{app_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -442,7 +442,7 @@
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/apps/{app_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -455,7 +455,7 @@
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/apps/{app_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -469,8 +469,7 @@
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/apps/{app_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -523,13 +522,6 @@
 <td>string</td>
 <td>true</td>
 <td>The id of the app to retrieve</td>
-</tr>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
 </tr>
 </tbody></table>
 
@@ -638,8 +630,9 @@
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='list-all-integration-apps'>List all integration apps</h2>
 <p><a id="opIdlistApps"></a></p>
@@ -647,7 +640,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/apps?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/apps</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -682,7 +675,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/apps'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -695,7 +688,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/apps'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -709,8 +702,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/apps'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -763,13 +755,6 @@ This operation does not require authentication
 <td>integer(int32)</td>
 <td>false</td>
 <td>How many items to return at one time (max 100)</td>
-</tr>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
 </tr>
 </tbody></table>
 
@@ -1027,8 +1012,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 
 <h1 id="owtlab-businesses">Businesses</h1>
@@ -1038,7 +1024,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/businesses?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/businesses</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1076,7 +1062,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/businesses'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -1090,7 +1076,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/businesses'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1105,8 +1091,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://owtlab.com/v1/businesses'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -1162,13 +1147,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>body</td>
 <td>body</td>
@@ -1252,8 +1230,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='list-all-businesses'>List all businesses</h2>
 <p><a id="opIdlistBusinesses"></a></p>
@@ -1261,7 +1240,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/businesses?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/businesses</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -1296,7 +1275,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/businesses'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -1309,7 +1288,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/businesses'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1323,8 +1302,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/businesses'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -1371,13 +1349,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>user_id</td>
 <td>query</td>
@@ -1589,8 +1560,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='show-business-details'>Show business details</h2>
 <p><a id="opIdshowBusiness"></a></p>
@@ -1598,7 +1570,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/businesses/{business_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/businesses/{business_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -1633,7 +1605,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/businesses/{business_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -1646,7 +1618,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/businesses/{business_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1660,8 +1632,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/businesses/{business_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -1709,13 +1680,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>business_id</td>
 <td>path</td>
 <td>string</td>
@@ -1756,8 +1720,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='update-a-business'>Update a business</h2>
 <p><a id="opIdupdateBusiness"></a></p>
@@ -1765,7 +1730,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/businesses/{business_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/businesses/{business_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1803,7 +1768,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/businesses/{business_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -1817,7 +1782,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/businesses/{business_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1832,8 +1797,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://owtlab.com/v1/businesses/{business_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -1889,13 +1853,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>business_id</td>
 <td>path</td>
@@ -1986,8 +1943,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='delete-a-business'>Delete a business</h2>
 <p><a id="opIddeleteBusiness"></a></p>
@@ -2108,8 +2066,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 
 <h1 id="owtlab-contacts">Contacts</h1>
@@ -2119,7 +2078,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/contacts?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/contacts</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -2157,7 +2116,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -2171,7 +2130,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -2186,8 +2145,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://owtlab.com/v1/contacts'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -2257,13 +2215,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>body</td>
 <td>body</td>
@@ -2443,8 +2394,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='list-all-contacts'>List all contacts</h2>
 <p><a id="opIdlistContacts"></a></p>
@@ -2452,7 +2404,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/contacts?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/contacts</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -2487,7 +2439,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -2500,7 +2452,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -2514,8 +2466,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/contacts'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -2562,13 +2513,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>user_id</td>
 <td>query</td>
@@ -2780,8 +2724,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='create-contacts'>Create contacts</h2>
 <p><a id="opIdstoreBulkContacts"></a></p>
@@ -2789,7 +2734,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/contacts/bulk?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/contacts/bulk</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -2827,7 +2772,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts/bulk'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -2841,7 +2786,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts/bulk'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -2856,8 +2801,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://owtlab.com/v1/contacts/bulk'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -2932,13 +2876,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>body</td>
 <td>body</td>
@@ -3137,8 +3074,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='show-contact-details'>Show contact details</h2>
 <p><a id="opIdshowContact"></a></p>
@@ -3146,7 +3084,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/contacts/{contact_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/contacts/{contact_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -3181,7 +3119,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -3194,7 +3132,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -3208,8 +3146,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -3256,13 +3193,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>contact_id</td>
 <td>path</td>
@@ -3316,8 +3246,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='update-a-contact'>Update a contact</h2>
 <p><a id="opIdupdateContact"></a></p>
@@ -3325,7 +3256,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/contacts/{contact_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/contacts/{contact_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -3363,7 +3294,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -3377,7 +3308,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -3392,8 +3323,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -3463,13 +3393,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>contact_id</td>
 <td>path</td>
@@ -3656,8 +3579,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='delete-a-contact'>Delete a contact</h2>
 <p><a id="opIddeleteContact"></a></p>
@@ -3665,7 +3589,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/contacts/{contact_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/contacts/{contact_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 
 </code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
@@ -3690,7 +3614,6 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'delete'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
 
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -3700,7 +3623,7 @@ This operation does not require authentication
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -3710,8 +3633,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://owtlab.com/v1/contacts/{contact_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">}</span>
+  <span class="p">}</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -3754,13 +3676,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>contact_id</td>
 <td>path</td>
 <td>string</td>
@@ -3787,8 +3702,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='import-contacts-from-integration'>Import contacts from integration</h2>
 <p><a id="opIdstoreIntegrationContacts"></a></p>
@@ -3796,7 +3712,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/contacts/integration/{integration_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/contacts/integration/{integration_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -3831,7 +3747,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/contacts/integration/{integration_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -3844,7 +3760,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/contacts/integration/{integration_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -3858,8 +3774,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/contacts/integration/{integration_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -3906,13 +3821,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>integration_id</td>
 <td>path</td>
@@ -3971,8 +3879,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 
 <h1 id="owtlab-transactions">Transactions</h1>
@@ -3982,7 +3891,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/transactions?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/transactions</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -4020,7 +3929,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/transactions'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -4034,7 +3943,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/transactions'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -4049,8 +3958,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://owtlab.com/v1/transactions'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -4124,13 +4032,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>body</td>
 <td>body</td>
@@ -4345,8 +4246,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='list-all-transactions'>List all transactions</h2>
 <p><a id="opIdlistTransactions"></a></p>
@@ -4354,7 +4256,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/transactions?api_token=string&amp;business_id=0</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/transactions?business_id=0</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -4389,7 +4291,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/transactions'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string&amp;business_id=0'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="s1">'?business_id=0'</span><span class="p">,</span>
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -4402,7 +4304,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/transactions'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span><span class="p">,</span>  <span class="s">'business_id'</span><span class="p">:</span> <span class="s">'0'</span>
+  <span class="s">'business_id'</span><span class="p">:</span> <span class="s">'0'</span>
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -4416,8 +4318,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/transactions'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span><span class="p">,</span>
-<span class="s1">'business_id'</span> <span class="o">=&gt;</span> <span class="s1">'integer'</span>
+  <span class="s1">'business_id'</span> <span class="o">=&gt;</span> <span class="s1">'integer'</span>
 <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -4465,13 +4366,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>business_id</td>
 <td>query</td>
@@ -4875,8 +4769,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='show-transaction-details'>Show transaction details</h2>
 <p><a id="opIdshowTransaction"></a></p>
@@ -4884,7 +4779,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/transactions/{transaction_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/transactions/{transaction_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -4919,7 +4814,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/transactions/{transaction_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -4932,7 +4827,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/transactions/{transaction_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -4946,8 +4841,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/transactions/{transaction_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -4994,13 +4888,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>transaction_id</td>
 <td>path</td>
@@ -5056,8 +4943,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='delete-a-transaction'>Delete a transaction</h2>
 <p><a id="opIddeleteTransaction"></a></p>
@@ -5065,7 +4953,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/transactions/{transaction_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/transactions/{transaction_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 
 </code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
@@ -5090,7 +4978,6 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/transactions/{transaction_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'delete'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
 
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -5100,7 +4987,7 @@ This operation does not require authentication
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/transactions/{transaction_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -5110,8 +4997,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://owtlab.com/v1/transactions/{transaction_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">}</span>
+  <span class="p">}</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -5154,13 +5040,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>transaction_id</td>
 <td>path</td>
 <td>string</td>
@@ -5187,8 +5066,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 
 <h1 id="owtlab-integrations">Integrations</h1>
@@ -5198,7 +5078,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/integrations?api_token=string&amp;business_id=0</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/integrations?business_id=0</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -5233,7 +5113,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/integrations'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string&amp;business_id=0'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="s1">'?business_id=0'</span><span class="p">,</span>
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -5246,7 +5126,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/integrations'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span><span class="p">,</span>  <span class="s">'business_id'</span><span class="p">:</span> <span class="s">'0'</span>
+  <span class="s">'business_id'</span><span class="p">:</span> <span class="s">'0'</span>
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -5260,8 +5140,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/integrations'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span><span class="p">,</span>
-<span class="s1">'business_id'</span> <span class="o">=&gt;</span> <span class="s1">'integer'</span>
+  <span class="s1">'business_id'</span> <span class="o">=&gt;</span> <span class="s1">'integer'</span>
 <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -5309,13 +5188,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>business_id</td>
 <td>query</td>
@@ -5556,8 +5428,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='create-an-integration'>Create an integration</h2>
 <p><a id="opIdstoreIntegration"></a></p>
@@ -5565,7 +5438,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/integrations?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/integrations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -5603,7 +5476,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/integrations'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -5617,7 +5490,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/integrations'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -5632,8 +5505,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://owtlab.com/v1/integrations'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -5691,13 +5563,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>body</td>
 <td>body</td>
@@ -5846,8 +5711,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='show-integration-details'>Show integration details</h2>
 <p><a id="opIdshowIntegration"></a></p>
@@ -5855,7 +5721,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/integrations/{integration_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/integrations/{integration_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -5890,7 +5756,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -5903,7 +5769,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -5917,8 +5783,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -5966,13 +5831,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>integration_id</td>
 <td>path</td>
 <td>string</td>
@@ -6015,8 +5873,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='update-an-integration'>Update an integration</h2>
 <p><a id="opIdupdateIntegration"></a></p>
@@ -6024,7 +5883,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/integrations/{integration_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/integrations/{integration_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -6062,7 +5921,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -6076,7 +5935,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -6091,8 +5950,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -6152,13 +6010,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>integration_id</td>
 <td>path</td>
@@ -6265,8 +6116,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='delete-an-integration'>Delete an integration</h2>
 <p><a id="opIddeleteIntegration"></a></p>
@@ -6274,7 +6126,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/integrations/{integration_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/integrations/{integration_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 
 </code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
@@ -6299,7 +6151,6 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'delete'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
 
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -6309,7 +6160,7 @@ This operation does not require authentication
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -6319,8 +6170,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://owtlab.com/v1/integrations/{integration_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">}</span>
+  <span class="p">}</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -6363,13 +6213,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>integration_id</td>
 <td>path</td>
 <td>string</td>
@@ -6396,8 +6239,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 
 <h1 id="owtlab-labels">Labels</h1>
@@ -6407,7 +6251,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/labels?api_token=string&amp;business_id=0</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/labels?business_id=0</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -6442,7 +6286,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/labels'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string&amp;business_id=0'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="s1">'?business_id=0'</span><span class="p">,</span>
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -6455,7 +6299,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/labels'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span><span class="p">,</span>  <span class="s">'business_id'</span><span class="p">:</span> <span class="s">'0'</span>
+  <span class="s">'business_id'</span><span class="p">:</span> <span class="s">'0'</span>
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -6469,8 +6313,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/labels'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span><span class="p">,</span>
-<span class="s1">'business_id'</span> <span class="o">=&gt;</span> <span class="s1">'integer'</span>
+  <span class="s1">'business_id'</span> <span class="o">=&gt;</span> <span class="s1">'integer'</span>
 <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -6518,13 +6361,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>business_id</td>
 <td>query</td>
@@ -6800,8 +6636,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='store-label'>Store Label</h2>
 <p><a id="opIdstoreLabel"></a></p>
@@ -6809,7 +6646,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/labels?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://owtlab.com/v1/labels</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -6847,7 +6684,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/labels'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -6861,7 +6698,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/labels'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -6876,8 +6713,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://owtlab.com/v1/labels'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -6939,13 +6775,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>body</td>
 <td>body</td>
@@ -7079,8 +6908,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='show-label-details'>Show label details</h2>
 <p><a id="opIdshowLabel"></a></p>
@@ -7088,7 +6918,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/labels/{label_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://owtlab.com/v1/labels/{label_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -7123,7 +6953,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -7136,7 +6966,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -7150,8 +6980,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -7199,13 +7028,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>label_id</td>
 <td>path</td>
 <td>string</td>
@@ -7250,8 +7072,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='update-a-label'>Update a label</h2>
 <p><a id="opIdupdateLabel"></a></p>
@@ -7259,7 +7082,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/labels/{label_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://owtlab.com/v1/labels/{label_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -7297,7 +7120,7 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
+
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -7311,7 +7134,7 @@ This operation does not require authentication
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -7326,8 +7149,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -7390,13 +7212,6 @@ This operation does not require authentication
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
 <tr>
 <td>label_id</td>
 <td>path</td>
@@ -7558,8 +7373,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h2 id='delete-a-label'>Delete a label</h2>
 <p><a id="opIddeleteLabel"></a></p>
@@ -7567,7 +7383,7 @@ This operation does not require authentication
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/labels/{label_id}?api_token=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://owtlab.com/v1/labels/{label_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">owtlab.com</span>
 
 </code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
@@ -7592,7 +7408,6 @@ This operation does not require authentication
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'delete'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?api_token=string'</span><span class="p">,</span>
 
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -7602,7 +7417,7 @@ This operation does not require authentication
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-  <span class="s">'api_token'</span><span class="p">:</span> <span class="s">'string'</span>
+
 <span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -7612,8 +7427,7 @@ This operation does not require authentication
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://owtlab.com/v1/labels/{label_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="s1">'api_token'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span>
-<span class="p">}</span>
+  <span class="p">}</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -7656,13 +7470,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>api_token</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Your API key</td>
-</tr>
-<tr>
 <td>label_id</td>
 <td>path</td>
 <td>string</td>
@@ -7689,8 +7496,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
 </aside>
 <h1 id='schemas'>Schemas</h1>
 <h2 id="tocSapp">App</h2>
