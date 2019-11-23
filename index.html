@@ -837,7 +837,7 @@ bearerAuth
 <td>query</td>
 <td>integer(int32)</td>
 <td>false</td>
-<td>How many items to return at one time (max 100)</td>
+<td>How many items to return at one time (max 1000)</td>
 </tr>
 </tbody></table>
 
@@ -979,119 +979,119 @@ bearerAuth
 <td>[<a href="#schemaapp">App</a>]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The list of apps inside of data</td>
 </tr>
 <tr>
 <td>»» id</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>id of app</td>
 </tr>
 <tr>
 <td>»» logo</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>app logo</td>
 </tr>
 <tr>
 <td>»» name</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>name of 3rd party app</td>
 </tr>
 <tr>
 <td>»» category</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>category of 3rd party app</td>
 </tr>
 <tr>
 <td>»» required_integration_fields</td>
 <td>[<a href="#schemaauthfield">AuthField</a>]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The required fields for integrating this app with Owtlab. Each app will have various required fields to integrate successfully with Owtlab.</td>
 </tr>
 <tr>
 <td>» current_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Current page of results</td>
 </tr>
 <tr>
 <td>» first_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>First page of results</td>
 </tr>
 <tr>
 <td>» from</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination from page number display</td>
 </tr>
 <tr>
 <td>» last_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page number of last available page</td>
 </tr>
 <tr>
 <td>» last_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page url of last available page</td>
 </tr>
 <tr>
 <td>» next_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url for the next page.</td>
 </tr>
 <tr>
 <td>» path</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Base path of url</td>
 </tr>
 <tr>
 <td>» per_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Number of items listed on page</td>
 </tr>
 <tr>
 <td>» prev_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url of previous page</td>
 </tr>
 <tr>
 <td>» to</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination to page number display</td>
 </tr>
 <tr>
 <td>» total</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Total number of results</td>
 </tr>
 </tbody></table>
 
@@ -1116,22 +1116,22 @@ bearerAuth
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="s1">'{
-  "business_id": 0,
-  "first_name": "string",
-  "last_name": "string",
-  "email": "string",
-  "phone": "string",
-  "title": "string",
-  "company": "string",
-  "domain": "string",
-  "dob": "string",
-  "image": "string",
-  "address_line": "string",
+  "business_id": "1",
+  "first_name": "John",
+  "last_name": "Smith",
+  "email": "John@example.com",
+  "phone": "650-555-5555",
+  "title": "Software Engineer",
+  "company": "Owtlab",
+  "domain": "example.com",
+  "dob": "05-20-1994",
+  "image": "https://owtlab.com/profile.png",
+  "address_line": "111 street example",
   "address_line2": "string",
-  "city": "string",
-  "state": "string",
-  "zipcode": "string",
-  "country": "string"
+  "city": "San Francisco",
+  "state": "CA",
+  "zipcode": "94128",
+  "country": "US"
 }'</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'Content-Type'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
@@ -1262,22 +1262,22 @@ bearerAuth
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="create-a-single-contact-parameters">Parameters</h3>
@@ -1303,126 +1303,126 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>» first_name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>First name of contact</td>
 </tr>
 <tr>
 <td>» last_name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Last name of contact</td>
 </tr>
 <tr>
 <td>» email</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The email address of the contact</td>
 </tr>
 <tr>
 <td>» phone</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The phone number of the contact</td>
 </tr>
 <tr>
 <td>» title</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Job title</td>
 </tr>
 <tr>
 <td>» company</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Company name</td>
 </tr>
 <tr>
 <td>» domain</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Domain of the business, by default, we will use the email&#39;s domain.</td>
 </tr>
 <tr>
 <td>» dob</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Date of birth</td>
 </tr>
 <tr>
 <td>» image</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Contact profile image</td>
 </tr>
 <tr>
 <td>» address_line</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Address line</td>
 </tr>
 <tr>
 <td>» address_line2</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Address line 2</td>
 </tr>
 <tr>
 <td>» city</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>» state</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>» zipcode</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Zipcode</td>
 </tr>
 <tr>
 <td>» country</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>» created_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>» updated_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -1432,22 +1432,22 @@ bearerAuth
 <p>201 Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1633,7 +1633,7 @@ bearerAuth
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>How many items to return at one time (max 100)</td>
+<td>How many items to return at one time (max 1000)</td>
 </tr>
 </tbody></table>
 
@@ -1751,77 +1751,77 @@ bearerAuth
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Current page of results</td>
 </tr>
 <tr>
 <td>» first_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>First page of results</td>
 </tr>
 <tr>
 <td>» from</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination from page number display</td>
 </tr>
 <tr>
 <td>» last_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page number of last available page</td>
 </tr>
 <tr>
 <td>» last_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page url of last available page</td>
 </tr>
 <tr>
 <td>» next_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url for the next page.</td>
 </tr>
 <tr>
 <td>» path</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Base path of url</td>
 </tr>
 <tr>
 <td>» per_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Number of items listed on page</td>
 </tr>
 <tr>
 <td>» prev_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url of previous page</td>
 </tr>
 <tr>
 <td>» to</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination to page number display</td>
 </tr>
 <tr>
 <td>» total</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Total number of results</td>
 </tr>
 </tbody></table>
 
@@ -1844,22 +1844,22 @@ bearerAuth
 <span class="kr">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="s1">'{
   "data": [
     {
-      "business_id": 0,
-      "first_name": "string",
-      "last_name": "string",
-      "email": "string",
-      "phone": "string",
-      "title": "string",
-      "company": "string",
-      "domain": "string",
-      "dob": "string",
-      "image": "string",
-      "address_line": "string",
+      "business_id": "1",
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "John@example.com",
+      "phone": "650-555-5555",
+      "title": "Software Engineer",
+      "company": "Owtlab",
+      "domain": "example.com",
+      "dob": "05-20-1994",
+      "image": "https://owtlab.com/profile.png",
+      "address_line": "111 street example",
       "address_line2": "string",
-      "city": "string",
-      "state": "string",
-      "zipcode": "string",
-      "country": "string"
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "94128",
+      "country": "US"
     }
   ],
   "business_id": 0
@@ -1995,22 +1995,22 @@ bearerAuth
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
@@ -2046,126 +2046,126 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>»» first_name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>First name of contact</td>
 </tr>
 <tr>
 <td>»» last_name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Last name of contact</td>
 </tr>
 <tr>
 <td>»» email</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The email address of the contact</td>
 </tr>
 <tr>
 <td>»» phone</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The phone number of the contact</td>
 </tr>
 <tr>
 <td>»» title</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Job title</td>
 </tr>
 <tr>
 <td>»» company</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Company name</td>
 </tr>
 <tr>
 <td>»» domain</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Domain of the business, by default, we will use the email&#39;s domain.</td>
 </tr>
 <tr>
 <td>»» dob</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Date of birth</td>
 </tr>
 <tr>
 <td>»» image</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Contact profile image</td>
 </tr>
 <tr>
 <td>»» address_line</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Address line</td>
 </tr>
 <tr>
 <td>»» address_line2</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Address line 2</td>
 </tr>
 <tr>
 <td>»» city</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>»» state</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>»» zipcode</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Zipcode</td>
 </tr>
 <tr>
 <td>»» country</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>»» created_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>»» updated_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 <tr>
 <td>» business_id</td>
@@ -2384,22 +2384,22 @@ bearerAuth
 <p>200 Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2439,22 +2439,22 @@ bearerAuth
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="s1">'{
-  "business_id": 0,
-  "first_name": "string",
-  "last_name": "string",
-  "email": "string",
-  "phone": "string",
-  "title": "string",
-  "company": "string",
-  "domain": "string",
-  "dob": "string",
-  "image": "string",
-  "address_line": "string",
+  "business_id": "1",
+  "first_name": "John",
+  "last_name": "Smith",
+  "email": "John@example.com",
+  "phone": "650-555-5555",
+  "title": "Software Engineer",
+  "company": "Owtlab",
+  "domain": "example.com",
+  "dob": "05-20-1994",
+  "image": "https://owtlab.com/profile.png",
+  "address_line": "111 street example",
   "address_line2": "string",
-  "city": "string",
-  "state": "string",
-  "zipcode": "string",
-  "country": "string"
+  "city": "San Francisco",
+  "state": "CA",
+  "zipcode": "94128",
+  "country": "US"
 }'</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'Content-Type'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
@@ -2583,22 +2583,22 @@ bearerAuth
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="update-a-contact-parameters">Parameters</h3>
@@ -2631,126 +2631,126 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>» first_name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>First name of contact</td>
 </tr>
 <tr>
 <td>» last_name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Last name of contact</td>
 </tr>
 <tr>
 <td>» email</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The email address of the contact</td>
 </tr>
 <tr>
 <td>» phone</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The phone number of the contact</td>
 </tr>
 <tr>
 <td>» title</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Job title</td>
 </tr>
 <tr>
 <td>» company</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Company name</td>
 </tr>
 <tr>
 <td>» domain</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Domain of the business, by default, we will use the email&#39;s domain.</td>
 </tr>
 <tr>
 <td>» dob</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Date of birth</td>
 </tr>
 <tr>
 <td>» image</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Contact profile image</td>
 </tr>
 <tr>
 <td>» address_line</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Address line</td>
 </tr>
 <tr>
 <td>» address_line2</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Address line 2</td>
 </tr>
 <tr>
 <td>» city</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>» state</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>» zipcode</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Zipcode</td>
 </tr>
 <tr>
 <td>» country</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>» created_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>» updated_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -2760,22 +2760,22 @@ bearerAuth
 <p>200 Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3191,7 +3191,6 @@ bearerAuth
   "action": "thread_create",
   "integration_id": 1,
   "app_id": 1,
-  "text_id": "id_in_text_version",
   "thread_id": "id_of_thread",
   "call_id": "id_of_a_phone_call",
   "subject": "Hello Roy!",
@@ -3340,7 +3339,6 @@ bearerAuth
   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thread_create"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"integration_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"text_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_in_text_version"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"thread_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_of_thread"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"call_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_of_a_phone_call"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello Roy!"</span><span class="p">,</span><span class="w">
@@ -3382,7 +3380,7 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>» action</td>
@@ -3396,112 +3394,112 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>false</td>
-<td>none</td>
+<td>The id from the integrations you have connected with owtlab that this transaction belongs to</td>
 </tr>
 <tr>
 <td>» app_id</td>
 <td>body</td>
 <td>integer</td>
 <td>false</td>
-<td>none</td>
+<td>the id of the 3rd party app</td>
 </tr>
 <tr>
 <td>» text_id</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>A unique text id that owtlab generates or uses from 3rd party integrations.</td>
 </tr>
 <tr>
 <td>» thread_id</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Id of an email thread. Multiple transactions can belong to one thread.</td>
 </tr>
 <tr>
 <td>» call_id</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>The call id of a phone call</td>
 </tr>
 <tr>
 <td>» subject</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>The email subject line of an email message</td>
 </tr>
 <tr>
 <td>» content</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>The content of email, sms, or other types of transactions</td>
 </tr>
 <tr>
 <td>» duration</td>
 <td>body</td>
 <td>integer</td>
 <td>false</td>
-<td>none</td>
+<td>The duration of a phone call, this will be null or 0 if not applicable.</td>
 </tr>
 <tr>
 <td>» timestamp</td>
 <td>body</td>
 <td>integer</td>
 <td>false</td>
-<td>none</td>
+<td>The actual timestamp of when the transaction has occured</td>
 </tr>
 <tr>
 <td>» created_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>» participants</td>
 <td>body</td>
 <td>[<a href="#schemaparticipant">Participant</a>]</td>
 <td>false</td>
-<td>none</td>
+<td>All the people that were involved in this transaction.</td>
 </tr>
 <tr>
 <td>»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Name of participant</td>
 </tr>
 <tr>
 <td>»» email</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Email address of the participant</td>
 </tr>
 <tr>
 <td>»» phone</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone number of the participant</td>
 </tr>
 <tr>
 <td>»» sender</td>
 <td>body</td>
 <td>boolean</td>
 <td>false</td>
-<td>none</td>
+<td>Indicator whether this participant had initiated the transaction or not.</td>
 </tr>
 <tr>
 <td>» recording_url</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>If recording is enabled in twilio for example, there will be a url for the recorded call</td>
 </tr>
 </tbody></table>
 <h4 id='enumerated-values'>Enumerated Values</h4>
@@ -3777,7 +3775,7 @@ bearerAuth
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>How many items to return at one time (max 100)</td>
+<td>How many items to return at one time (max 1000)</td>
 </tr>
 </tbody></table>
 <h4 id='enumerated-values-2'>Enumerated Values</h4>
@@ -3908,7 +3906,7 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>»» action</td>
@@ -3922,189 +3920,189 @@ bearerAuth
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The id from the integrations you have connected with owtlab that this transaction belongs to</td>
 </tr>
 <tr>
 <td>»» app_id</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>the id of the 3rd party app</td>
 </tr>
 <tr>
 <td>»» text_id</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
-<td>none</td>
+<td>read-only</td>
+<td>A unique text id that owtlab generates or uses from 3rd party integrations.</td>
 </tr>
 <tr>
 <td>»» thread_id</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Id of an email thread. Multiple transactions can belong to one thread.</td>
 </tr>
 <tr>
 <td>»» call_id</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The call id of a phone call</td>
 </tr>
 <tr>
 <td>»» subject</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The email subject line of an email message</td>
 </tr>
 <tr>
 <td>»» content</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The content of email, sms, or other types of transactions</td>
 </tr>
 <tr>
 <td>»» duration</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The duration of a phone call, this will be null or 0 if not applicable.</td>
 </tr>
 <tr>
 <td>»» timestamp</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The actual timestamp of when the transaction has occured</td>
 </tr>
 <tr>
 <td>»» created_at</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>»» participants</td>
 <td>[<a href="#schemaparticipant">Participant</a>]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>All the people that were involved in this transaction.</td>
 </tr>
 <tr>
 <td>»»» name</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Name of participant</td>
 </tr>
 <tr>
 <td>»»» email</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Email address of the participant</td>
 </tr>
 <tr>
 <td>»»» phone</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Phone number of the participant</td>
 </tr>
 <tr>
 <td>»»» sender</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Indicator whether this participant had initiated the transaction or not.</td>
 </tr>
 <tr>
 <td>»» recording_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>If recording is enabled in twilio for example, there will be a url for the recorded call</td>
 </tr>
 <tr>
 <td>» current_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Current page of results</td>
 </tr>
 <tr>
 <td>» first_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>First page of results</td>
 </tr>
 <tr>
 <td>» from</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination from page number display</td>
 </tr>
 <tr>
 <td>» last_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page number of last available page</td>
 </tr>
 <tr>
 <td>» last_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page url of last available page</td>
 </tr>
 <tr>
 <td>» next_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url for the next page.</td>
 </tr>
 <tr>
 <td>» path</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Base path of url</td>
 </tr>
 <tr>
 <td>» per_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Number of items listed on page</td>
 </tr>
 <tr>
 <td>» prev_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url of previous page</td>
 </tr>
 <tr>
 <td>» to</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination to page number display</td>
 </tr>
 <tr>
 <td>» total</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Total number of results</td>
 </tr>
 </tbody></table>
 <h4 id='enumerated-values-3'>Enumerated Values</h4>
@@ -4694,7 +4692,7 @@ bearerAuth
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>How many items to return at one time (max 100)</td>
+<td>How many items to return at one time (max 1000)</td>
 </tr>
 </tbody></table>
 
@@ -4771,133 +4769,133 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>»» app_id</td>
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The app id of the supported 3rd party apps in owtlab</td>
 </tr>
 <tr>
 <td>»» name</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Integration name such as Twilio, Sendgrid, etc...</td>
 </tr>
 <tr>
 <td>»» error</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The error flag will be set to true if we find a problem with your integration</td>
 </tr>
 <tr>
 <td>»» disabled</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>You can disable or enable your integration. Once disabled, we stopped tracking communication from this particular integration</td>
 </tr>
 <tr>
 <td>»» error_message</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A detailed error message with your account if issues found.</td>
 </tr>
 <tr>
 <td>»» created_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>»» updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 <tr>
 <td>» current_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Current page of results</td>
 </tr>
 <tr>
 <td>» first_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>First page of results</td>
 </tr>
 <tr>
 <td>» from</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination from page number display</td>
 </tr>
 <tr>
 <td>» last_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page number of last available page</td>
 </tr>
 <tr>
 <td>» last_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page url of last available page</td>
 </tr>
 <tr>
 <td>» next_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url for the next page.</td>
 </tr>
 <tr>
 <td>» path</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Base path of url</td>
 </tr>
 <tr>
 <td>» per_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Number of items listed on page</td>
 </tr>
 <tr>
 <td>» prev_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url of previous page</td>
 </tr>
 <tr>
 <td>» to</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination to page number display</td>
 </tr>
 <tr>
 <td>» total</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Total number of results</td>
 </tr>
 </tbody></table>
 
@@ -5584,56 +5582,56 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>» app_id</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The app id of the supported 3rd party apps in owtlab</td>
 </tr>
 <tr>
 <td>» name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Integration name such as Twilio, Sendgrid, etc...</td>
 </tr>
 <tr>
 <td>» error</td>
 <td>body</td>
 <td>boolean</td>
 <td>false</td>
-<td>none</td>
+<td>The error flag will be set to true if we find a problem with your integration</td>
 </tr>
 <tr>
 <td>» disabled</td>
 <td>body</td>
 <td>boolean</td>
 <td>false</td>
-<td>none</td>
+<td>You can disable or enable your integration. Once disabled, we stopped tracking communication from this particular integration</td>
 </tr>
 <tr>
 <td>» error_message</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>A detailed error message with your account if issues found.</td>
 </tr>
 <tr>
 <td>» created_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>» updated_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -5996,7 +5994,7 @@ bearerAuth
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>How many items to return at one time (max 100)</td>
+<td>How many items to return at one time (max 1000)</td>
 </tr>
 </tbody></table>
 
@@ -6077,14 +6075,14 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>»» label</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Label name</td>
 </tr>
 <tr>
 <td>»» filter</td>
@@ -6119,91 +6117,91 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>»» updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 <tr>
 <td>» current_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Current page of results</td>
 </tr>
 <tr>
 <td>» first_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>First page of results</td>
 </tr>
 <tr>
 <td>» from</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination from page number display</td>
 </tr>
 <tr>
 <td>» last_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page number of last available page</td>
 </tr>
 <tr>
 <td>» last_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page url of last available page</td>
 </tr>
 <tr>
 <td>» next_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url for the next page.</td>
 </tr>
 <tr>
 <td>» path</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Base path of url</td>
 </tr>
 <tr>
 <td>» per_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Number of items listed on page</td>
 </tr>
 <tr>
 <td>» prev_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url of previous page</td>
 </tr>
 <tr>
 <td>» to</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination to page number display</td>
 </tr>
 <tr>
 <td>» total</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Total number of results</td>
 </tr>
 </tbody></table>
 <h4 id='enumerated-values-4'>Enumerated Values</h4>
@@ -6950,14 +6948,14 @@ bearerAuth
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>» label</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Label name</td>
 </tr>
 <tr>
 <td>» filter</td>
@@ -6992,14 +6990,14 @@ bearerAuth
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>» updated_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 <h4 id='enumerated-values-6'>Enumerated Values</h4>
@@ -7419,7 +7417,7 @@ bearerAuth
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>How many items to return at one time (max 100)</td>
+<td>How many items to return at one time (max 1000)</td>
 </tr>
 </tbody></table>
 
@@ -7432,14 +7430,14 @@ bearerAuth
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
@@ -7518,21 +7516,21 @@ bearerAuth
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Name of company</td>
 </tr>
 <tr>
 <td>»» title</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The title to be displayed on the optin page</td>
 </tr>
 <tr>
 <td>»» preferences</td>
 <td>[<a href="#schemapreference">Preference</a>]</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>List of communication checkbox settings to display to user</td>
 </tr>
 <tr>
 <td>»»» preference_id</td>
@@ -7546,126 +7544,126 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The title of the opt-in checkbox displayed to the user.</td>
 </tr>
 <tr>
 <td>»»» description</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A simple description that will be displayed to the user in the opt page.</td>
 </tr>
 <tr>
 <td>»»» default</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The default optin value. User&#39;s will be automatically opted in for this preferece by default.</td>
 </tr>
 <tr>
 <td>»»» active</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Active determines if a particular option should be displayed to the user or not.</td>
 </tr>
 <tr>
 <td>»» logo</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Logo of business</td>
 </tr>
 <tr>
 <td>»» created_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>»» updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 <tr>
 <td>» current_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Current page of results</td>
 </tr>
 <tr>
 <td>» first_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>First page of results</td>
 </tr>
 <tr>
 <td>» from</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination from page number display</td>
 </tr>
 <tr>
 <td>» last_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page number of last available page</td>
 </tr>
 <tr>
 <td>» last_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Page url of last available page</td>
 </tr>
 <tr>
 <td>» next_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url for the next page.</td>
 </tr>
 <tr>
 <td>» path</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Base path of url</td>
 </tr>
 <tr>
 <td>» per_page</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Number of items listed on page</td>
 </tr>
 <tr>
 <td>» prev_page_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Url of previous page</td>
 </tr>
 <tr>
 <td>» to</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Pagination to page number display</td>
 </tr>
 <tr>
 <td>» total</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Total number of results</td>
 </tr>
 </tbody></table>
 
@@ -7687,13 +7685,13 @@ bearerAuth
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="s1">'{
   "business_id": 1,
-  "name": "Subscription name",
+  "name": "Owtlab",
   "title": "Title on optin page",
   "preferences": [
     {
-      "name": "Preference name",
+      "name": "Daily Newsletter",
       "description": "Preference description",
-      "default": true,
+      "default": "trued",
       "active": true
     }
   ],
@@ -7827,13 +7825,13 @@ bearerAuth
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -7877,21 +7875,21 @@ bearerAuth
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Name of company</td>
 </tr>
 <tr>
 <td>» title</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>The title to be displayed on the optin page</td>
 </tr>
 <tr>
 <td>» preferences</td>
 <td>body</td>
 <td>[<a href="#schemapreference">Preference</a>]</td>
 <td>true</td>
-<td>none</td>
+<td>List of communication checkbox settings to display to user</td>
 </tr>
 <tr>
 <td>»» preference_id</td>
@@ -7905,49 +7903,49 @@ bearerAuth
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>The title of the opt-in checkbox displayed to the user.</td>
 </tr>
 <tr>
 <td>»» description</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>A simple description that will be displayed to the user in the opt page.</td>
 </tr>
 <tr>
 <td>»» default</td>
 <td>body</td>
 <td>boolean</td>
 <td>false</td>
-<td>none</td>
+<td>The default optin value. User&#39;s will be automatically opted in for this preferece by default.</td>
 </tr>
 <tr>
 <td>»» active</td>
 <td>body</td>
 <td>boolean</td>
 <td>false</td>
-<td>none</td>
+<td>Active determines if a particular option should be displayed to the user or not.</td>
 </tr>
 <tr>
 <td>» logo</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Logo of business</td>
 </tr>
 <tr>
 <td>» created_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>» updated_at</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -7958,14 +7956,14 @@ bearerAuth
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -8152,14 +8150,14 @@ bearerAuth
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -8207,9 +8205,9 @@ bearerAuth
   "title": "Title on optin page",
   "preferences": [
     {
-      "name": "Preference name",
+      "name": "Daily Newsletter",
       "description": "Preference description",
-      "default": true,
+      "default": "trued",
       "active": true
     }
   ]
@@ -8345,9 +8343,9 @@ bearerAuth
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -8387,14 +8385,14 @@ bearerAuth
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -8594,9 +8592,9 @@ bearerAuth
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -8652,28 +8650,28 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The title of the opt-in checkbox displayed to the user.</td>
 </tr>
 <tr>
 <td>»» description</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A simple description that will be displayed to the user in the opt page.</td>
 </tr>
 <tr>
 <td>»» default</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The default optin value. User&#39;s will be automatically opted in for this preferece by default.</td>
 </tr>
 <tr>
 <td>»» active</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Active determines if a particular option should be displayed to the user or not.</td>
 </tr>
 </tbody></table>
 
@@ -8874,9 +8872,9 @@ bearerAuth
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -8932,28 +8930,28 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The title of the opt-in checkbox displayed to the user.</td>
 </tr>
 <tr>
 <td>»» description</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A simple description that will be displayed to the user in the opt page.</td>
 </tr>
 <tr>
 <td>»» default</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The default optin value. User&#39;s will be automatically opted in for this preferece by default.</td>
 </tr>
 <tr>
 <td>»» active</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Active determines if a particular option should be displayed to the user or not.</td>
 </tr>
 </tbody></table>
 
@@ -9544,9 +9542,9 @@ bearerAuth
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -9602,28 +9600,28 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The title of the opt-in checkbox displayed to the user.</td>
 </tr>
 <tr>
 <td>»» description</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A simple description that will be displayed to the user in the opt page.</td>
 </tr>
 <tr>
 <td>»» default</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The default optin value. User&#39;s will be automatically opted in for this preferece by default.</td>
 </tr>
 <tr>
 <td>»» active</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Active determines if a particular option should be displayed to the user or not.</td>
 </tr>
 </tbody></table>
 
@@ -9636,10 +9634,10 @@ bearerAuth
 
 <p><a id="schemaapp"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/logo.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twilio"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"required_integration_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"api_key"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -9660,35 +9658,35 @@ bearerAuth
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>id of app</td>
 </tr>
 <tr>
 <td>logo</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>app logo</td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>name of 3rd party app</td>
 </tr>
 <tr>
 <td>category</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>category of 3rd party app</td>
 </tr>
 <tr>
 <td>required_integration_fields</td>
 <td>[<a href="#schemaauthfield">AuthField</a>]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The required fields for integrating this app with Owtlab. Each app will have various required fields to integrate successfully with Owtlab.</td>
 </tr>
 </tbody></table>
 
@@ -9762,22 +9760,22 @@ bearerAuth
 
 <p><a id="schemacontact"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650-555-5555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-20-1994"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://owtlab.com/profile.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 street example"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94128"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-09 14:58:08"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -9797,126 +9795,126 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>first_name</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>First name of contact</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Last name of contact</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The email address of the contact</td>
 </tr>
 <tr>
 <td>phone</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The phone number of the contact</td>
 </tr>
 <tr>
 <td>title</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Job title</td>
 </tr>
 <tr>
 <td>company</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Company name</td>
 </tr>
 <tr>
 <td>domain</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Domain of the business, by default, we will use the email&#39;s domain.</td>
 </tr>
 <tr>
 <td>dob</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Date of birth</td>
 </tr>
 <tr>
 <td>image</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Contact profile image</td>
 </tr>
 <tr>
 <td>address_line</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Address line</td>
 </tr>
 <tr>
 <td>address_line2</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Address line 2</td>
 </tr>
 <tr>
 <td>city</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>state</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>zipcode</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Zipcode</td>
 </tr>
 <tr>
 <td>country</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -9952,14 +9950,14 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>label</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Label name</td>
 </tr>
 <tr>
 <td>filter</td>
@@ -9973,14 +9971,14 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -10013,56 +10011,56 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>app_id</td>
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The app id of the supported 3rd party apps in owtlab</td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Integration name such as Twilio, Sendgrid, etc...</td>
 </tr>
 <tr>
 <td>error</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The error flag will be set to true if we find a problem with your integration</td>
 </tr>
 <tr>
 <td>disabled</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>You can disable or enable your integration. Once disabled, we stopped tracking communication from this particular integration</td>
 </tr>
 <tr>
 <td>error_message</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A detailed error message with your account if issues found.</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -10071,9 +10069,9 @@ bearerAuth
 <p><a id="schemapreference"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -10099,28 +10097,28 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The title of the opt-in checkbox displayed to the user.</td>
 </tr>
 <tr>
 <td>description</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>A simple description that will be displayed to the user in the opt page.</td>
 </tr>
 <tr>
 <td>default</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The default optin value. User&#39;s will be automatically opted in for this preferece by default.</td>
 </tr>
 <tr>
 <td>active</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Active determines if a particular option should be displayed to the user or not.</td>
 </tr>
 </tbody></table>
 
@@ -10130,14 +10128,14 @@ bearerAuth
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"business_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owtlab"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title on optin page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preferences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"preference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily Newsletter"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preference description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trued"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -10175,42 +10173,42 @@ bearerAuth
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>Name of company</td>
 </tr>
 <tr>
 <td>title</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The title to be displayed on the optin page</td>
 </tr>
 <tr>
 <td>preferences</td>
 <td>[<a href="#schemapreference">Preference</a>]</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>List of communication checkbox settings to display to user</td>
 </tr>
 <tr>
 <td>logo</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Logo of business</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>string</td>
 <td>false</td>
 <td>read-only</td>
-<td>none</td>
+<td>Update date in owtlab</td>
 </tr>
 </tbody></table>
 
@@ -10256,98 +10254,98 @@ bearerAuth
 <td>integer</td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>The business id that can be found on your dashboard</td>
 </tr>
 <tr>
 <td>action</td>
 <td><a href="#schemaaction">Action</a></td>
 <td>true</td>
 <td>none</td>
-<td>none</td>
+<td>An action that describes the transaction</td>
 </tr>
 <tr>
 <td>integration_id</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The id from the integrations you have connected with owtlab that this transaction belongs to</td>
 </tr>
 <tr>
 <td>app_id</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>the id of the 3rd party app</td>
 </tr>
 <tr>
 <td>text_id</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
-<td>none</td>
+<td>read-only</td>
+<td>A unique text id that owtlab generates or uses from 3rd party integrations.</td>
 </tr>
 <tr>
 <td>thread_id</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Id of an email thread. Multiple transactions can belong to one thread.</td>
 </tr>
 <tr>
 <td>call_id</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The call id of a phone call</td>
 </tr>
 <tr>
 <td>subject</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The email subject line of an email message</td>
 </tr>
 <tr>
 <td>content</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The content of email, sms, or other types of transactions</td>
 </tr>
 <tr>
 <td>duration</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The duration of a phone call, this will be null or 0 if not applicable.</td>
 </tr>
 <tr>
 <td>timestamp</td>
 <td>integer</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>The actual timestamp of when the transaction has occured</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Creation date in owtlab</td>
 </tr>
 <tr>
 <td>participants</td>
 <td>[<a href="#schemaparticipant">Participant</a>]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>All the people that were involved in this transaction.</td>
 </tr>
 <tr>
 <td>recording_url</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>If recording is enabled in twilio for example, there will be a url for the recorded call</td>
 </tr>
 </tbody></table>
 
@@ -10376,28 +10374,28 @@ bearerAuth
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Name of participant</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Email address of the participant</td>
 </tr>
 <tr>
 <td>phone</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Phone number of the participant</td>
 </tr>
 <tr>
 <td>sender</td>
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Indicator whether this participant had initiated the transaction or not.</td>
 </tr>
 </tbody></table>
 
