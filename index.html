@@ -671,7 +671,7 @@
             example: &amp;transactionExample
               business_id: 1
               transaction_id: 6
-              action: &#39;thread_create&#39;
+              action: &#39;message_sent&#39;
               text_id: &#39;abcdefghijklmnopqrstuvwxyz&#39;
               parent_id: &quot;abcdefghijklmnopqrstuvwxyz
               subject: &quot;Hello World&quot;
@@ -1890,12 +1890,12 @@
 
 <p>Action:
       type: string
-      example: thread_create
+      example: message_sent
       enum:
         - sms_delivered
         - sms_received
-        - thread_create
-        - thread_reply
+        - message_sent
+        - message_received
         - call_initiated
         - call_completed
         - call_no_answer
